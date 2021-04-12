@@ -5,9 +5,9 @@ import android.os.Parcelable;
 
 public class CovidCountry implements Parcelable {
 
-    String mCovidCountry, mCases, mTodayCases, mDeaths, mTodayDeaths, mRecovered, mActive, mCritical;
+    String mCovidCountry, mCases, mTodayCases, mDeaths, mTodayDeaths, mRecovered, mActive, mCritical, mFlags;
 
-    public CovidCountry(String mCovidCountry, String mCases, String mTodayCases, String mDeaths, String mTodayDeaths, String mRecovered, String mActive, String mCritical) {
+    public CovidCountry(String mCovidCountry, String mCases, String mTodayCases, String mDeaths, String mTodayDeaths, String mRecovered, String mActive, String mCritical, String mFlags) {
         this.mCovidCountry = mCovidCountry;
         this.mCases = mCases;
         this.mTodayCases = mTodayCases;
@@ -16,6 +16,7 @@ public class CovidCountry implements Parcelable {
         this.mRecovered = mRecovered;
         this.mActive = mActive;
         this.mCritical = mCritical;
+        this.mFlags = mFlags;
     }
 
     public void setmCovidCountry(String mCovidCountry) {
@@ -50,6 +51,10 @@ public class CovidCountry implements Parcelable {
         this.mCritical = mCritical;
     }
 
+    public void setmFlags(String mFlags) {
+        this.mFlags = mFlags;
+    }
+
     public String getmCovidCountry() {
         return mCovidCountry;
     }
@@ -82,6 +87,10 @@ public class CovidCountry implements Parcelable {
         return mCritical;
     }
 
+    public String getmFlags() {
+        return mFlags;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -97,6 +106,7 @@ public class CovidCountry implements Parcelable {
         dest.writeString(this.mRecovered);
         dest.writeString(this.mActive);
         dest.writeString(this.mCritical);
+        dest.writeString(this.mFlags);
     }
 
     protected CovidCountry(Parcel in) {
@@ -108,6 +118,7 @@ public class CovidCountry implements Parcelable {
         this.mRecovered = in.readString();
         this.mActive = in.readString();
         this.mCritical = in.readString();
+        this.mFlags = in.readString();
     }
 
     public static final Creator<CovidCountry> CREATOR = new Creator<CovidCountry>() {
