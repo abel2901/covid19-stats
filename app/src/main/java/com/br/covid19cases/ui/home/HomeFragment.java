@@ -72,7 +72,7 @@ public class HomeFragment extends Fragment {
                     tvTotalConfirmed.setText(jsonObject.getString("cases"));
                     tvTotalDeaths.setText(jsonObject.getString("deaths"));
                     tvTotalRecovered.setText(jsonObject.getString("recovered"));
-                    tvLastUpdated.setText("Last Updated"+"\n"+getDate(jsonObject.getLong("Updated")));
+                    tvLastUpdated.setText("Last Updated"+"\n"+getDate(jsonObject.getLong("updated")));
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
