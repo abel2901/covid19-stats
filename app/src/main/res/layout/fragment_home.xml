@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:textColor="@color/colorTotalConfirmed"
-            tools:text="17845487" />
+            tools:text="17845487"/>
 
         <TextView
             android:id="@+id/tvLabelTotalDeaths"

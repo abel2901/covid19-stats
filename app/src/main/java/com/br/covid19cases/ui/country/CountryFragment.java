@@ -99,7 +99,7 @@ public class CountryFragment extends Fragment {
                                     data.getString("todayCases"), data.getString("deaths"),
                                     data.getString("todayDeaths"), data.getString("recovered"),
                                     data.getString("active"), data.getString("critical"),
-                                    countryInfo.getString("flag")
+                                    countryInfo.getString("flag"), data.getString("updated")
                             ));
                         }
                         tvTotalCountry.setText(jsonArray.length() + " countries");

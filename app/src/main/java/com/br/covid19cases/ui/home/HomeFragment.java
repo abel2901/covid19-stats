@@ -22,6 +22,8 @@ import com.br.covid19cases.R;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -48,7 +50,7 @@ public class HomeFragment extends Fragment {
         return root;
     }
 
-    private String getDate(long milliSecond) {
+    public String getDate(long milliSecond) {
         // Mon, 23 Mar 2020 02:01:04 PM
         SimpleDateFormat formatter = new SimpleDateFormat("EEE, dd MMM yyyy hh:mm:ss aaa");
         Calendar calendar = Calendar.getInstance();

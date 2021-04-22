@@ -5,9 +5,12 @@ import android.os.Parcelable;
 
 public class CovidCountry implements Parcelable {
 
-    String mCovidCountry, mCases, mTodayCases, mDeaths, mTodayDeaths, mRecovered, mActive, mCritical, mFlags;
+    String mCovidCountry, mCases, mTodayCases, mDeaths, mTodayDeaths, mRecovered, mActive, mCritical,
+            mFlags, mLastUpdatedCountries;
 
-    public CovidCountry(String mCovidCountry, String mCases, String mTodayCases, String mDeaths, String mTodayDeaths, String mRecovered, String mActive, String mCritical, String mFlags) {
+    public CovidCountry(String mCovidCountry, String mCases, String mTodayCases, String mDeaths,
+                        String mTodayDeaths, String mRecovered, String mActive, String mCritical,
+                        String mFlags, String mLastUpdatedCountries) {
         this.mCovidCountry = mCovidCountry;
         this.mCases = mCases;
         this.mTodayCases = mTodayCases;
@@ -17,6 +20,7 @@ public class CovidCountry implements Parcelable {
         this.mActive = mActive;
         this.mCritical = mCritical;
         this.mFlags = mFlags;
+        this.mLastUpdatedCountries = mLastUpdatedCountries;
     }
 
     public void setmCovidCountry(String mCovidCountry) {
@@ -55,6 +59,10 @@ public class CovidCountry implements Parcelable {
         this.mFlags = mFlags;
     }
 
+    public void setmLastUpdatedCountries(String mLastUpdatedCountries) {
+        this.mLastUpdatedCountries = mLastUpdatedCountries;
+    }
+
     public String getmCovidCountry() {
         return mCovidCountry;
     }
@@ -91,6 +99,10 @@ public class CovidCountry implements Parcelable {
         return mFlags;
     }
 
+    public String getmLastUpdatedCountries() {
+        return mLastUpdatedCountries;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -107,6 +119,7 @@ public class CovidCountry implements Parcelable {
         dest.writeString(this.mActive);
         dest.writeString(this.mCritical);
         dest.writeString(this.mFlags);
+        dest.writeString(this.mLastUpdatedCountries);
     }
 
     protected CovidCountry(Parcel in) {
@@ -119,6 +132,7 @@ public class CovidCountry implements Parcelable {
         this.mActive = in.readString();
         this.mCritical = in.readString();
         this.mFlags = in.readString();
+        this.mLastUpdatedCountries = in.readString();
     }
 
     public static final Creator<CovidCountry> CREATOR = new Creator<CovidCountry>() {
